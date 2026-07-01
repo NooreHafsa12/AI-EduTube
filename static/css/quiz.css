@@ -1,0 +1,106 @@
+.quiz-box {
+    max-width: 760px;
+    margin: 25px auto 0;
+}
+
+.quiz-card {
+    background: linear-gradient(135deg, #ffffff, #f8fafc, #eef2ff);
+    border: 1px solid #e2e8f0;
+    border-radius: 30px;
+    padding: 36px;
+    box-shadow: 0 25px 60px rgba(99,102,241,.15);
+}
+
+body.dark .quiz-card {
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    border-color: rgba(255,255,255,.08);
+}
+
+.quiz-progress {
+    display: inline-block;
+    background: #ede9fe;
+    color: #7c3aed;
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-weight: 800;
+    margin-bottom: 22px;
+}
+
+.quiz-card h3 {
+    font-size: 26px;
+    line-height: 1.5;
+    color: #0f172a;
+    margin-bottom: 24px;
+}
+
+body.dark .quiz-card h3 {
+    color: white;
+}
+
+.option-btn {
+    width: 100%;
+    text-align: left;
+    margin: 10px 0;
+    padding: 16px 18px;
+    border-radius: 18px;
+    border: 1px solid #dbeafe;
+    background: #f8fafc;
+    color: #1e293b;
+    font-weight: 800;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.option-btn:hover {
+    background: #eef2ff;
+    transform: translateX(5px);
+}
+
+.option-btn.correct {
+    background: #dcfce7;
+    border-color: #22c55e;
+    color: #166534;
+}
+
+.option-btn.wrong {
+    background: #fee2e2;
+    border-color: #ef4444;
+    color: #991b1b;
+}
+
+.quiz-feedback {
+    margin-top: 18px;
+    font-weight: 900;
+    font-size: 18px;
+}
+
+.next-quiz-btn {
+    margin-top: 22px;
+    padding: 14px 24px;
+    border: none;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #8b5cf6, #60a5fa);
+    color: white;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.score-card {
+    text-align: center;
+    background: linear-gradient(135deg, #ffffff, #fdf2f8, #eef2ff);
+    border-radius: 32px;
+    padding: 45px;
+    border: 1px solid #e2e8f0;
+}
+
+.score-card h2 {
+    font-size: 38px;
+    margin-bottom: 14px;
+}
+
+.score-card .score {
+    font-size: 56px;
+    font-weight: 900;
+    color: #7c3aed;
+    margin: 18px 0;
+}

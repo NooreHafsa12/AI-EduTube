@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI StudyMate Pro | YouTube AI Learning Assistant</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    {% include 'components/loader.html' %}
+    {% include 'components/navbar.html' %}
+    {% include 'components/hero.html' %}
+
+    <section id="features" class="features-section">
+        <div class="section-header">
+            <span class="badge">🚀 Features</span>
+            <h2>Everything You Need To Study Smarter</h2>
+            <p>
+                One YouTube URL gives you complete study material powered by AI.
+            </p>
+        </div>
+
+        <div class="features-grid">
+            <div class="glass-card feature-card">
+                <div class="feature-icon">📝</div>
+                <h3>AI Summary</h3>
+                <p>Get clean bullet-point notes and key concepts from long videos.</p>
+            </div>
+
+            <div class="glass-card feature-card">
+                <div class="feature-icon">🧠</div>
+                <h3>Flashcards</h3>
+                <p>Revise using beautiful 3D flip flashcards generated from the video.</p>
+            </div>
+
+            <div class="glass-card feature-card">
+                <div class="feature-icon">❓</div>
+                <h3>Smart Quiz</h3>
+                <p>Practice MCQs one-by-one with instant feedback and final score.</p>
+            </div>
+
+            <div class="glass-card feature-card">
+                <div class="feature-icon">📄</div>
+                <h3>PDF Export</h3>
+                <p>Download summary, flashcards, and quiz as a clean PDF study guide.</p>
+            </div>
+        </div>
+    </section>
+
+    {% include 'components/footer.html' %}
+
+    <script src="{{ url_for('static', filename='js/theme.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/loader.js') }}"></script>
+</body>
+
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | AI StudyMate Pro</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+</head>
+
+<body>
+    {% include 'components/loader.html' %}
+    {% include 'components/navbar.html' %}
+
+    <main class="dashboard-shell">
+
+        <section class="study-input-card glass-card">
+            <div class="study-input-left">
+                <span class="badge">🎥 YouTube Study Mode</span>
+                <h1>Paste one YouTube link. Get complete study material.</h1>
+                <p>
+                    AI StudyMate will generate summary, flashcards, quiz, and PDF notes from your video.
+                </p>
+
+                <form id="videoForm" class="video-form">
+                    <input
+                        type="url"
+                        id="videoUrl"
+                        placeholder="Paste YouTube video URL here..."
+                        required
+                    >
+                    <button type="submit" id="generateSummaryBtn" class="btn-primary">
+                        Analyze Video
+                    </button>
+                </form>
+            </div>
+
+            <div class="study-preview-card">
+                <div id="videoThumbnail" class="thumbnail-box">
+                    <span>▶</span>
+                </div>
+
+                <div class="video-meta">
+                    <h3 id="videoTitle">Video preview will appear here</h3>
+                    <p id="channelName">Channel name</p>
+                    <span id="videoDuration">Duration</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="quick-actions">
+            <a href="#summarySection" class="quick-card glass-card">
+                <span>📝</span>
+                <h3>Summary</h3>
+                <p>Clean notes and key points</p>
+            </a>
+
+            <a href="#flashcardsSection" class="quick-card glass-card">
+                <span>🧠</span>
+                <h3>Flashcards</h3>
+                <p>Flip cards for revision</p>
+            </a>
+
+            <a href="#quizSection" class="quick-card glass-card">
+                <span>❓</span>
+                <h3>Quiz</h3>
+                <p>Practice MCQs</p>
+            </a>
+
+            <button id="quickPdfBtn" class="quick-card glass-card pdf-btn" type="button">
+                <span>📄</span>
+                <h3>PDF</h3>
+                <p>Download study guide</p>
+            </button>
+        </section>
+
+        <section id="summarySection" class="dashboard-section glass-card">
+            <div class="dashboard-section-header">
+                <div>
+                    <span class="badge">📝 AI Summary</span>
+                    <h2>Smart Video Summary</h2>
+                    <p>Important notes, bullet points, and key concepts from your video.</p>
+                </div>
+
+                <div class="section-actions">
+                    <button id="copySummaryBtn" class="btn-secondary" type="button">
+                        Copy
+                    </button>
+
+                    <button id="downloadPdfBtn" class="btn-primary" type="button">
+                        Download PDF
+                    </button>
+                </div>
+            </div>
+
+            <div id="summaryOutput" class="summary-output">
+                <div class="empty-state">
+                    <h3>No summary yet</h3>
+                    <p>Paste a YouTube URL and click Analyze Video.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="flashcardsSection" class="dashboard-section glass-card">
+            <div class="dashboard-section-header">
+                <div>
+                    <span class="badge">🧠 Flashcards</span>
+                    <h2>AI Flashcards</h2>
+                    <p>Click a card to flip and revise important concepts.</p>
+                </div>
+
+                <div class="section-actions">
+                    <button id="prevFlashcardBtn" class="btn-secondary" type="button">
+                        ← Previous
+                    </button>
+
+                    <button id="nextFlashcardBtn" class="btn-secondary" type="button">
+                        Next →
+                    </button>
+                </div>
+            </div>
+
+            <div class="flashcard-progress">
+                <span id="flashcardCounter">0 / 0</span>
+            </div>
+
+            <div id="flashcardsContainer" class="flashcards-stage">
+                <div class="empty-state">
+                    <h3>No flashcards yet</h3>
+                    <p>Analyze a video to generate flashcards.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="quizSection" class="dashboard-section glass-card">
+            <div class="dashboard-section-header">
+                <div>
+                    <span class="badge">❓ Smart Quiz</span>
+                    <h2>Practice Quiz</h2>
+                    <p>Answer one question at a time and check your score.</p>
+                </div>
+            </div>
+
+            <div class="quiz-progress-bar">
+                <div id="quizProgressFill"></div>
+            </div>
+
+            <div id="quizContainer" class="quiz-stage">
+                <div class="empty-state">
+                    <h3>No quiz yet</h3>
+                    <p>Analyze a video to generate quiz questions.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    {% include 'components/footer.html' %}
+
+    <script src="{{ url_for('static', filename='js/utils.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/theme.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/loader.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+
+</html>

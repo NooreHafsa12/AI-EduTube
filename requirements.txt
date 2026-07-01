@@ -1,0 +1,6 @@
+Flask==3.0.3
+yt-dlp
+youtube-transcript-api
+fpdf
+python-dotenv
+requests
